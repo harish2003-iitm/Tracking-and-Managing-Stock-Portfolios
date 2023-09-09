@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Stock Prices</title>
+    >
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease; 
+        }
+
+        li strong {
+            font-weight: bold;
+        }
+
+        li:hover {
+            background-color: #f0f0f0;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease; 
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        nav {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;}
+
+        nav a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1> Tracking and Managing Stock portfolios</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="/real_time_updates.html">Real-Time Updates</a></li>
+        </ul>
+    </nav>
+    <ul>
+        <li><strong>AAPL:</strong> {{ stock_prices['AAPL'] }}</li>
+        <li><strong>GOOG:</strong> {{ stock_prices['GOOG'] }}</li>
+        <li><strong>TSLA:</strong> {{ stock_prices['TSLA'] }}</li>
+        <li><strong>AMZN:</strong> {{ stock_prices['AMZN'] }}</li>
+        <li><strong>MSFT:</strong> {{ stock_prices['MSFT'] }}</li>
+    </ul>
+    
+    <button>Click Me</button>
+
+    <img src="data:image/png;base64,{{ plot }}" alt="Stock Prices">
+</body>
+</html>

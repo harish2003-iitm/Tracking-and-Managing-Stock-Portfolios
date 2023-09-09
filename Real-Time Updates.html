@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Updates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Real-Time Updates</h1>
+    <div id="real-time-content">
+    </div>
+    <script>
+        function updateRealTimeContent() {
+           
+            fetch('/get_real_time_content')  
+                .then(response => response.text())
+                .then(data => {
+                  
+                    document.getElementById('real-time-content').innerHTML = data;
+                })
+                .catch(error => console.error('Error fetching real-time content:', error));
+
+           
+            setTimeout(updateRealTimeContent, 5000);
+        }
+
+       
+        updateRealTimeContent();
+    </script>
+</body>
+</html>
